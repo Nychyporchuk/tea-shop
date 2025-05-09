@@ -1,0 +1,81 @@
+<div class="container d-flex flex-column justify-content-center flex-grow-1 ">
+  <section *ngIf="!isSubmitted" class="order-form col-lg-6 mx-auto">
+    <h2 class="text-center mb-5">Сделать заказ</h2>
+
+    <form [formGroup]="orderForm" (ngSubmit)="onSubmit()" class="row">
+
+      <div class="col-md-6 mb-2">
+        <label class="form-label">Имя</label>
+        <input type="text" class="form-control" formControlName="name">
+        <div *ngIf="f['name'].touched && f['name'].invalid" class="text-danger small">
+          Введите корректное имя (только буквы)
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-2">
+        <label class="form-label">Фамилия</label>
+        <input type="text" class="form-control" formControlName="last_name">
+        <div *ngIf="f['last_name'].touched && f['last_name'].invalid" class="text-danger small">
+          Введите корректную фамилию (только буквы)
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-2">
+        <label class="form-label">Телефон</label>
+        <input type="text" class="form-control" formControlName="phone">
+        <div *ngIf="f['phone'].touched && f['phone'].invalid" class="text-danger small">
+          Телефон должен содержать 11 цифр, допускается знак +
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-2">
+        <label class="form-label">Страна</label>
+        <input type="text" class="form-control" formControlName="country">
+        <div *ngIf="f['country'].touched && f['country'].invalid" class="text-danger small">
+          Обязательное поле
+        </div>
+      </div>
+
+      <div class="col-md-12 mb-2">
+        <label class="form-label">Индекс</label>
+        <input type="text" class="form-control" formControlName="zip">
+        <div *ngIf="f['zip'].touched && f['zip'].invalid" class="text-danger small">
+          Обязательное поле
+        </div>
+      </div>
+
+      <div class="col-md-12 mb-2">
+        <label class="form-label">Адрес</label>
+        <input type="text" class="form-control" formControlName="address">
+        <div *ngIf="f['address'].touched && f['address'].invalid" class="text-danger small">
+          Разрешены буквы, цифры, пробелы, дефис и слеш
+        </div>
+      </div>
+
+      <div class="col-md-12 mb-2">
+        <label class="form-label">Товар</label>
+        <input type="text" class="form-control" formControlName="product" [disabled]="true">
+      </div>
+
+      <div class="col-md-12 mb-2">
+        <label class="form-label">Комментарий к заказу</label>
+        <textarea class="form-control" formControlName="comment" rows="3"></textarea>
+      </div>
+
+      <div *ngIf="errorMessage" class="text-danger mb-3">
+        {{ errorMessage }}
+      </div>
+
+      <div class="col-12 mt-3 mb-5">
+        <button class="btn btn-primary w-100" type="submit">Отправить</button>
+      </div>
+    </form>
+  </section>
+
+  <section *ngIf="isSubmitted" class="order-thanks col-lg-6 mx-auto">
+    <div class="alert text-center alert-success" role="alert">
+      <h4 class="alert-heading">Спасибо за заказ!</h4>
+      <p>Мы получили ваш заказ и обработаем его в ближайшее время. Ожидайте доставки!</p>
+    </div>
+  </section>
+</div>

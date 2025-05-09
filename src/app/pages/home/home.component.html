@@ -1,0 +1,102 @@
+<div class="container">
+<section class="slider-section  ">
+  <div class="slider  ">
+    <div class="slider-item " style="background-image: url('assets/images/image10.png')  ">
+
+      <div class="slider-text d-flex flex-column align-content-start align-items-start  ">
+        <h2 class=" display-md-4 font-weight-bold mb-5 ">Скидки на травянные чаи</h2>
+        <p class=" text-md mb-5">Узнай все подробности, заполнив заявку</p>
+        <a routerLink="/catalog" class="btn btn-primary px-4 py-2 btn-lg">Заполнить</a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+  <div class="accordion col-lg-8 mx-auto mb-5" id="faqAccordion">
+    <h2 class="titles text-center mb-5">Ответы на часто задаваемые вопросы</h2>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+          Собираете ли вы подарочные боксы?
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+           data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                aria-expanded="false" aria-controls="collapseTwo">
+          Сколько у вас разновидностей чая?
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+           data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          У нас 35 разновидностей черного чая и 25 зеленого.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                aria-expanded="false" aria-controls="collapseThree">
+          В какой срок осуществляется доставка?
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+           data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Доставка осуществляется в срок от 5 до 7 рабочих дней.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFour">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                aria-expanded="false" aria-controls="collapseFour">
+          У вас обновляется ассортимент?
+        </button>
+      </h2>
+      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+           data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Подпишитесь на нашу рассылку, чтоб всегда быть в курсе наших обновлений товара.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFive">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                aria-expanded="false" aria-controls="collapseFive">
+          Какого объема у вас пачки чая?
+        </button>
+      </h2>
+      <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+           data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          В наличии пачки чая объемом 100мл, 200мл и 400 мл.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="showPopup" class="popup-overlay">
+    <div class="popup-content">
+      <button class="close-btn" (click)="closePopup()">×</button>
+      <p>Посмотрите наши чайные коллекции</p>
+      <button class="btn btn-primary" (click)="goToCatalog()">Смотреть</button>
+    </div>
+  </div>
+</div>

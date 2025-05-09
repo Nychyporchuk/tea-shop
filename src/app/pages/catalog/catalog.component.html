@@ -1,0 +1,27 @@
+<div class="container my-4 wow animate__backInDown">
+  <h2 class="titles text-center mb-5">Наши чайные коллекции</h2>
+
+  <div *ngIf="isLoading" class="text-center">
+    Загрузка...
+  </div>
+
+  <div *ngIf="error" class="text-center text-danger">
+    {{ error }}
+  </div>
+
+  <div class="row">
+    <div *ngFor="let tea of teas" class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center">
+      <div class="card custom-card">
+        <div class="wow image-container" data-wow-duration="0.5s" data-wow-delay="0.2s">
+          <img [src]="tea.image" class="card-img-top" alt="tea box">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ tea.title }}</h5>
+          <p class="card-text">{{ tea.description| truncate:150 }}</p>
+          <a [routerLink]="['/product', tea.id]" class="btn btn-primary hvr-grow">Подробнее</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
