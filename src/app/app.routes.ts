@@ -1,13 +1,25 @@
-import { Routes } from '@angular/router';
-import {HomeComponent} from './pages/home/home.component';
-import {CatalogComponent} from './pages/catalog/catalog.component';
-import {ProductComponent} from './pages/product/product.component';
-import {OrderComponent} from './pages/order/order.component';
+import {provideRouter, Routes} from '@angular/router';
+
+
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'catalog', component: CatalogComponent },
-  { path: 'product/:id', component: ProductComponent },
-  { path: 'order', component: OrderComponent },
-  { path: '**', redirectTo: '' }
+  {
+    path: '',
+    loadChildren: () => import('./features/main/main.module').then(m => m.MainModule)
+  },
+  {
+    path: 'products',
+    loadChildren: () => import('./features/products/products.module').then(m => m.ProductsModule)
+  },
+  {
+    path: 'order',
+    loadChildren: () => import('./features/order/order.module').then(m => m.OrderModule)
+  }
 ];
+
+export const appConfig = {
+  providers: [
+
+    provideRouter(routes)
+  ]
+};

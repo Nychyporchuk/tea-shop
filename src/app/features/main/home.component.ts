@@ -1,7 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy } from '@angular/core';
 import {Router, RouterModule} from '@angular/router';
 import { Subscription, timer } from 'rxjs';
-import {NgIf} from '@angular/common';
 
 @Component({
   standalone: true,
@@ -9,7 +8,7 @@ import {NgIf} from '@angular/common';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   imports: [RouterModule,
-    NgIf
+
   ]
 })
 export class HomeComponent implements AfterViewInit, OnDestroy {
@@ -37,6 +36,11 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
 
   goToCatalog(): void {
     this.showPopup = false;
-    this.router.navigate(['/catalog']);
+    this.router.navigate(['/products/catalog']);
+  }
+  isOpen = 0;
+
+  toggle(index: number): void {
+    this.isOpen = this.isOpen === index ? 0 : index;
   }
 }

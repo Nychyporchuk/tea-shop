@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import {TruncatePipe} from '../../truncate.pipe';
+import {TruncatePipe} from '../../../shared/pipes/truncate.pipe';
 import {RouterModule} from '@angular/router';
 
 interface TeaItem {

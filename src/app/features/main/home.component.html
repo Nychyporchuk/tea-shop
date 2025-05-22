@@ -1,0 +1,94 @@
+<div class="container">
+<section class="slider-section  ">
+  <div class="slider  ">
+    <div class="slider-item " style="background-image: url('assets/images/image10.png')  ">
+
+      <div class="slider-text d-flex flex-column align-content-start align-items-start  ">
+        <h2 class=" display-md-4 font-weight-bold mb-5 ">Скидки на травянные чаи</h2>
+        <p class=" text-md mb-5">Узнай все подробности, заполнив заявку</p>
+        <a routerLink="/products/catalog" class="btn btn-primary px-4 py-2 btn-lg">Заполнить</a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+  <div class="accordion-custom">
+    <h2 class="titles text-center mb-5">Ответы на часто задаваемые вопросы</h2>
+
+    <div class="item" (click)="toggle(1)">
+      <div class="title">
+        Собираете ли вы подарочные боксы?
+        <img src="/assets/icons/arrow-right.svg" class="accordion-icon" [class.rotated]="isOpen === 1" alt="arrow" />
+      </div>
+      @if (isOpen === 1) {
+        <div class="content">
+          Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+        </div>
+      }
+    </div>
+
+    <div class="item" (click)="toggle(2)">
+      <div class="title">
+        Сколько у вас разновидностей чая?
+        <img src="/assets/icons/arrow-right.svg" class="accordion-icon" [class.rotated]="isOpen === 2" alt="arrow" />
+      </div>
+      @if (isOpen === 2) {
+        <div class="content">
+          У нас 35 разновидностей черного чая и 25 зеленого.
+        </div>
+      }
+    </div>
+
+    <div class="item" (click)="toggle(3)">
+      <div class="title">
+        В какой срок осуществляется доставка?
+        <img src="/assets/icons/arrow-right.svg" class="accordion-icon" [class.rotated]="isOpen === 3" alt="arrow" />
+      </div>
+      @if (isOpen === 3) {
+        <div class="content">
+          Доставка осуществляется в срок от 5 до 7 рабочих дней.
+        </div>
+      }
+    </div>
+
+    <div class="item" (click)="toggle(4)">
+      <div class="title">
+        У вас обновляется ассортимент?
+        <img src="/assets/icons/arrow-right.svg" class="accordion-icon" [class.rotated]="isOpen === 4" alt="arrow" />
+      </div>
+      @if (isOpen === 4) {
+        <div class="content">
+          Подпишитесь на нашу рассылку, чтоб всегда быть в курсе наших обновлений товара.
+        </div>
+      }
+    </div>
+
+    <div class="item" (click)="toggle(5)">
+      <div class="title">
+        Какого объема у вас пачки чая?
+        <img src="/assets/icons/arrow-right.svg" class="accordion-icon" [class.rotated]="isOpen === 5" alt="arrow" />
+      </div>
+      @if (isOpen === 5) {
+        <div class="content">
+          В наличии пачки чая объемом 100мл, 200мл и 400 мл.
+        </div>
+      }
+    </div>
+  </div>
+
+
+
+
+
+
+  @if (showPopup) {
+    <div class="popup-overlay">
+      <div class="popup-content">
+        <button class="close-btn" (click)="closePopup()">×</button>
+        <p>Посмотрите наши чайные коллекции</p>
+        <button class="btn btn-primary" (click)="goToCatalog()">Смотреть</button>
+      </div>
+    </div>
+  }
+</div>

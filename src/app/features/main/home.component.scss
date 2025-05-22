@@ -52,61 +52,50 @@
   }
 }
 
-#faqAccordion {
-  .accordion-item {
+.accordion-custom {
+  max-width: 800px;
+  margin: 0 auto;
+
+  .item {
     border: 1px solid #dee2e6;
     border-radius: 10px;
     margin-top: 16px;
-        font-size: 16px;
+    font-size: 16px;
     font-weight: 700;
     overflow: hidden;
+    cursor: pointer;
 
-  }
+    .title {
+      background-color: #0d6efd;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-  .accordion-button {
-    background-color: #0d6efd;
-    color: white;
-    fill: white;
-    font-weight: bold;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+      .accordion-icon {
+        width: 16px;
+        height: 16px;
+        transition: transform 0.3s ease;
+        margin-left: 10px;
 
-    &:focus {
-      box-shadow: none;
+      }
+
+      .accordion-icon.rotated {
+        transform: rotate(90deg);
+      }
     }
 
-    &::after {
-
-      content: '';
-      width: 16px;
-      height: 16px;
-      background: url('/assets/images/right-arrow-svgrepo-com.svg') no-repeat center;
-      background-size: contain;
-      transition: transform 0.3s ease;
+    .content {
+      background-color: #f8f9fa;
+      padding: 15px;
+      color: #333;
     }
   }
-
-  .accordion-button:not(.collapsed) {
-    background-color: #0d6efd;
-    color: white;
-
-    &::after {
-      transform: rotate(90deg);
-    }
-  }
-
-  .accordion-body {
-
-    padding: 15px;
-  }
-  .accordion-icon {
-    transition: transform 0.3s ease;
-    fill: white;
-  }
-
 }
+
+
+
 
 
 .popup-overlay {

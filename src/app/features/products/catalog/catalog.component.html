@@ -18,7 +18,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ tea.title }}</h5>
           <p class="card-text">{{ tea.description| truncate:150 }}</p>
-          <a [routerLink]="['/product', tea.id]" class="btn btn-primary hvr-grow">Подробнее</a>
+          <a [routerLink]="['/products', tea.id]" class="btn btn-primary hvr-grow">Подробнее</a>
         </div>
       </div>
     </div>
